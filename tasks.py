@@ -40,3 +40,24 @@ def findTask(taskID):
 
         print("Error finding task:", e)
         return None
+
+
+
+def update(task, newName):
+    try:
+        task["name"] = newName
+        print("Task updated successfully!")
+
+    except Exception as e:
+        print("Error updating task:", e)
+
+
+
+
+def removeTask(task):
+    try:
+        tasks.remove(task)
+        print("Task removed successfully!")
+
+    except Exception as e:
+        print("Error removing task:", e)
