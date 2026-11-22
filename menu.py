@@ -17,3 +17,24 @@ def showMenu():
 9. Show queue (QUEUE)
 0. Exit
 """)
+
+
+
+def getTask():
+    try:
+        text = input("enter task ID: ")
+
+        if not text.isdigit():
+            print("please enter a valid number")
+            return None
+
+        task = findTask(int(text))
+
+        if task == None:
+            print("task not found")
+
+        return task
+    except Exception as e:
+
+        print("Error:", e)
+        return None
