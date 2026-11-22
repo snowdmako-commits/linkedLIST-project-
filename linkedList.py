@@ -51,3 +51,17 @@ def addHistory(text):
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def showHistory():
+    try:
+        if not history:
+            print("history is empty")
+            return
+
+        for node in history:
+            print("-", node["data"])
+
+    except Exception as e:
+        print("Error", e)
