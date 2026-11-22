@@ -55,3 +55,25 @@ def menuAdd():
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def menuUpdate():
+    try:
+        task = getTask()
+
+        if task == None:
+            return
+
+        newName = input("enter new task name: ").strip()
+
+        if newName == "":
+            print("task name cannot be empty")
+            return
+
+        push(tasks, taskQueue)
+        update(task, newName)
+        addHistory("Updated: " + newName)
+
+    except Exception as e:
+        print("Error:", e)
