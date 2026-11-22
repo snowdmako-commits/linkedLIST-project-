@@ -13,6 +13,8 @@ def addTask(name):
     except Exception as e:
         print("Error adding task:", e)
 
+
+
 def showTasks():
     try:
         if not tasks:
@@ -24,3 +26,17 @@ def showTasks():
 
     except Exception as e:
         print("Error showing tasks:", e)
+
+
+
+def findTask(taskID):
+    try:
+        for task in tasks:
+            if task["id"] == taskID:
+                return task
+        return None
+    
+    except Exception as e:
+
+        print("Error finding task:", e)
+        return None
