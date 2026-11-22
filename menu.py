@@ -77,3 +77,33 @@ def menuUpdate():
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def menuRemove():
+    try:
+        task = getTask()
+
+        if task == None:
+            return
+
+        push(tasks, taskQueue)
+        removeTask(task)
+
+        if task["id"] in taskQueue:
+            taskQueue.remove(task["id"])
+
+        addHistory("Removed: " + task["name"])
+
+    except Exception as e:
+        print("Error:", e)
+
+
+
+
+def menuShow():
+    try:
+        showTasks()
+
+    except Exception as e:
+        print("Error:", e)
