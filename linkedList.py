@@ -29,3 +29,25 @@ def showCompleted():
 
     except Exception as e:
         print("Error:", e)
+
+
+
+history = []
+
+
+def addHistory(text):
+    try:
+        node = {}
+
+        node["data"] = text
+        node["previous"] = None
+        node["next"] = None
+
+        if history:
+            node["next"] = history[0]
+            history[0]["previous"] = node
+
+        history.insert(0, node)
+
+    except Exception as e:
+        print("Error:", e)
