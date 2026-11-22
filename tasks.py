@@ -12,3 +12,15 @@ def addTask(name):
 
     except Exception as e:
         print("Error adding task:", e)
+
+def showTasks():
+    try:
+        if not tasks:
+            print("Task list is empty!")
+            return
+        
+        for task in tasks:
+            print("ID:", task["id"], "| Name:", task["name"], "| Status:", task["status"])
+
+    except Exception as e:
+        print("Error showing tasks:", e)
