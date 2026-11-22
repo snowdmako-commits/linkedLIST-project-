@@ -14,3 +14,18 @@ def addCompleted(task):
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def showCompleted():
+    try:
+        if not completedTasks:
+            print("no completed tasks")
+            return
+
+        for node in completedTasks:
+            task = node["data"]
+            print("ID:", task["id"], "| Name:", task["name"], "| Status:", task["status"])
+
+    except Exception as e:
+        print("Error:", e)
