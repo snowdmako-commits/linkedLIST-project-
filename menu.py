@@ -151,3 +151,36 @@ def menuComplete():
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def menuUndo():
+    try:
+        if undo(tasks, taskQueue):
+            addHistory("Undo operation")
+
+    except Exception as e:
+        print("Error:", e)
+
+
+
+def menuHistory():
+    try:
+        print("\n--- Task History ---")
+        showHistory()
+
+        print("\n--- Completed Tasks ---")
+        showCompleted()
+
+    except Exception as e:
+        print("Error:", e)
+
+
+
+def menuShowQueue():
+    try:
+        print("\n--- Task Queue ---")
+        showQueue()
+
+    except Exception as e:
+        print("Error:", e)
