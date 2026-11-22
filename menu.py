@@ -38,3 +38,20 @@ def getTask():
 
         print("Error:", e)
         return None
+
+
+
+def menuAdd():
+    try:
+        name = input("enter task name: ").strip()
+
+        if name == "":
+            print("task name cannot be empty")
+            return
+
+        push(tasks, taskQueue)
+        addTask(name)
+        addHistory("Added: " + name)
+
+    except Exception as e:
+        print("Error:", e)
