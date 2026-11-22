@@ -107,3 +107,47 @@ def menuShow():
 
     except Exception as e:
         print("Error:", e)
+
+
+
+def menuAddToQueue():
+    try:
+        task = getTask()
+
+        if task == None:
+            return
+
+        if task["status"] == "Completed":
+            print("task is already completed")
+            return
+
+        push(tasks, taskQueue)
+
+        if enqueue(task["id"]):
+            addHistory("Added to queue: " + task["name"])
+
+    except Exception as e:
+        print("Error:", e)
+
+
+
+
+def menuComplete():
+    try:
+        if len(taskQueue) == 0:
+            print("queue is empty")
+            return
+
+        push(tasks, taskQueue)
+
+        taskID = dequeue()
+        task = findTask(taskID)
+
+        task["status"] = "Completed"
+        addCompleted(task)
+
+        print("Completed: " + task["name"])
+        addHistory("Completed: " + task["name"])
+
+    except Exception as e:
+        print("Error:", e)
